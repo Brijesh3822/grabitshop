@@ -1,38 +1,374 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.side{
+  overflow: auto;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@media (min-width: 768px) {
+  .side {
+    overflow-x: hidden;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.frist{
+  background-image: url("https://grabitshop.io/_next/static/media/bg-banner.20d2f380.png");
+  /* background: radial-gradient(34.98% 34.98% at 50% 50%,#2166b0 0,rgba(6,19,45,0) 100%); */
+}
+ .font {
+  font-family: "conthrax";
+  font-optical-sizing: auto;
+  
+  font-weight: 400;
+  font-style: normal;
+}
+ .arvrmodal{
+  background-image: url(./modal3.png);
+  background-repeat: no-repeat;
+   animation: moveBottomToTop 3s ease-in-out infinite;
+ }
+@media (min-width: 425px) {
+  .arvrmodal {
+    overflow-x: hidden;
+  }
+}
+ @keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.scroll-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: scroll 10s linear infinite; /* Adjust time for scroll speed */
+  width: 200%; /* Double the container width to fit both sets of images */
 }
 
-.App-link {
-  color: #61dafb;
+.scroll-container img {
+  flex-shrink: 0; /* Prevent images from shrinking */
+}
+.arvrmodal .overflow-x-auto::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for WebKit */
 }
 
-@keyframes App-logo-spin {
-  from {
+.arvrmodal .overflow-x-auto {
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.arvrmodal {
+  overflow: hidden; /* Hide any overflow */
+}
+/* @keyframes animation 
+.coin{
+  ;
+} */
+
+
+
+
+@keyframes moveCoin {
+  0% {
+    transform: translateX(0); /* Start from the left */
+  }
+  50% {
+    transform: translateX(300px); /* Move to the right */
+  }
+  100% {
+    transform: translateX(0); /* Return to the left */
+  }
+}
+
+.coin img {
+  animation: moveCoin 4s ease-in-out infinite; /* 3 seconds for each full loop, adjust as needed */
+}
+.vrhome{
+  animation: moveCoin 4s ease-in-out infinite;
+}
+@keyframes moveBottomToTop {
+  0% {
+    transform: translateY(0); /* Start at the initial position */
+  }
+  50% {
+    transform: translateY(-25px); /* Move upwards */
+  }
+  100% {
+    transform: translateY(0); /* Return to start */
+  }
+}
+
+@keyframes moveTopToBottom {
+  0% {
+    transform: translateY(0); /* Start at the initial position */
+  }
+  50% {
+    transform: translateY(25px); /* Move downwards */
+  }
+  100% {
+    transform: translateY(0); /* Return to start */
+  }
+}
+
+@keyframes ringAnimation {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
+}
+
+.bottom-to-top {
+  animation: moveBottomToTop 3s ease-in-out infinite;
+}
+
+.top-to-bottom {
+  animation: moveTopToBottom 3s ease-in-out infinite;
+}
+
+
+
+/* .about{
+  background: radial-gradient(34.98% 34.98% at 50% 50%,#2166b0 0,rgba(6,19,45,0) 100%);
+} */
+/* .three{
+  background:linear-gradient(180deg, hsla(0, 0%, 100%, .05), hsla(0, 0%, 100%, 0) 73.86%);
+
+} */
+
+.box{
+  /* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; */
+box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+.round{
+  background:linear-gradient(264.28deg, #19c1f2 -38.2%, #2166b0 103.12%);
+}
+/* 
+.number:hover{
+  color: (0,0%,100%,.1)
+} */
+
+
+
+
+
+
+
+
+
+.explore{
+  opacity: 0.;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
+.moving {
+	--angle: 0deg;
+
+	background: linear-gradient(#070A29, #070A29) padding-box, conic-gradient(from var(--angle), #19c1f2, #2166b0) border-box;
+	border: 2px solid transparent;
+  /* transition: border 0.5s ease, background 0.5s ease; */
+	animation: rotate-gradient 3s infinite linear;
+}
+.boxsec{
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+@keyframes rotate-gradient {
+	from { --angle: 0deg; }
+	to { --angle: 360deg; }
+}
+
+@keyframes moveLeftRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Adjust distance as needed */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.move-image {
+  animation: moveLeftRight 3s ease-in-out infinite;
+}
+@keyframes grow-line {
+  0% {
+    width: 0%; /* Start from the left with no width */
+  }
+  100% {
+    width: 63%; /* Fully extend to the right */
+  }
+}
+
+.growing-line {
+  width: 0%; /* Initial width */
+  animation: grow-line 7s linear forwards; /* Repeat animation indefinitely */
+  background:  linear-gradient(264.28deg, #19c1f2 -38.2%, #2166b0 104.12%);
+}
+
+.roadmapbox{
+  box-shadow: rgba(72, 71, 71, 0.56) 0px 22px 70px 4px;
+}
+
+
+@keyframes moveTopToBottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px); /* Adjust distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.move-roadmapimage {
+  animation:  moveTopToBottom 3s ease-in-out infinite;
+}
+
+@property --angle {
+	syntax: '<angle>';
+	inherits: true;
+	initial-value: 0deg;
+}
+
+  
+.roadmapround {
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: linear-gradient(135deg, #19c1f2, #2166b0); /* Base gradient color */
+	box-shadow: 
+		0 0 10px rgba(33, 102, 176, 0.7),  /* Outer glow */
+		0 0 20px rgba(33, 102, 176, 0.5),  /* Larger spread for a banked look */
+		0 0 30px rgba(33, 102, 176, 0.3),  /* Subtle distant glow */
+		inset 0 0 10px rgba(33, 102, 176, 0.8); /* Inner glow for a deeper effect */
+	animation: pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow {
+	from {
+		box-shadow: 
+			0 0 10px rgba(33, 102, 176, 0.7),  
+			0 0 20px rgba(33, 102, 176, 0.5),
+			0 0 30px rgba(33, 102, 176, 0.3),
+			inset 0 0 10px rgba(33, 102, 176, 0.8);
+	}
+	to {
+		box-shadow: 
+			0 0 15px rgba(33, 102, 176, 0.8), 
+			0 0 25px rgba(33, 102, 176, 0.6),
+			0 0 40px rgba(33, 102, 176, 0.4),
+			inset 0 0 15px rgba(33, 102, 176, 1);
+	}
+}
+
+
+
+.movingother {
+	--angle: 0deg;
+
+	background: linear-gradient(#070A29, #070A29) padding-box, conic-gradient(from var(--angle), #19c1f2, #2166b0) border-box;
+	border: 2px solid transparent;
+  /* transition: border 0.5s ease, background 0.5s ease; */
+	animation: rotate-gradient 7s infinite linear;
+}
+
+.faqbutton {
+  background: hsla(0, 0%, 100%, 0.1);
+  transition: background 0.3s ease; /* Smooth transition for background color */
+}
+
+.boxfinal {
+  background: linear-gradient(264.28deg, #19c1f2 -38.2%, #2166b0 104.12%);
+}
+
+.buttoncontact{
+  background: linear-gradient(265.05deg, #ffcb52 -6.15%, #ff7b02 106.32%);
+}
+.buttoncontact {
+background: linear-gradient(265.05deg, #ffcb52 -6.15%, #ff7b02 106.32%); /* Default color */
+  position: relative;
+  overflow: hidden; /* To contain the ::after pseudo-element */
+  transition: background 0.3s ease;
+}
+
+.buttoncontact:hover {
+background: linear-gradient(265.05deg, #ffcb52 -6.15%, #ff7b02 106.32%); /* Hover color change */
+}
+
+/* Optional glowing effect */
+.buttoncontact::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -210%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.13) 0%,
+    rgba(255, 255, 255, 0.13) 77%,
+    rgba(255, 255, 255, 0.5) 92%,
+    rgba(255, 255, 255, 0)
+  );
+  transition: all 0.7s ease;
+  opacity: 0;
+}
+
+.buttoncontact:hover::after {
+  left: -30%;
+  opacity: 1;
+  top: -20%;
+  transition-duration: 0.7s, 0.7s, 0.15s;
+  transition-property: left, top, opacity;
+  transition-timing-function: linear;
+}
+
+@keyframes moveLefttoRight {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px); /* Adjust distance as needed */
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.move-contactimage {
+  animation:  moveLefttoRight 3s ease-in-out infinite;
+}
+
+
+@keyframes moveToptoBottom {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(20px); /* Adjust distance as needed */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.move-images {
+  animation:  moveToptoBottom 3s ease-in-out infinite;
+}
+
+
+
+
+
+
+.icon:hover{
+ background: linear-gradient(264.28deg, #19c1f2 -38.2%, #2166b0 104.12%);
 }
